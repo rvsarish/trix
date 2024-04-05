@@ -13,7 +13,7 @@ const ProductCarousel = () => {
       setIndex((prevIndex) =>
         prevIndex === products.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [products]);
 
@@ -34,7 +34,7 @@ const ProductCarousel = () => {
                 src={product.image}
                 alt={product.name}
                 fluid
-                style={{ width: '400px', height: '300px' }}
+                style={{ width: '1200px', height: '500px' }}
               />
               <Carousel.Caption className='carousel-caption'>
                 <h2 className='text-white text-right'>

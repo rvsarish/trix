@@ -32,13 +32,18 @@ const Header = () => {
   return (
     <header>
       <Navbar style={{ backgroundColor: '#40916C'}} className='text-white' variant='' expand='lg' collapseOnSelect>
-        <Container className='text-white'>
+        <Container className='text-white' >
           <LinkContainer to='/'>
-          <Navbar.Brand><div style={{ fontSize: '40px',textAlign:'center',color:'white' }}>
-    <img src={logo} alt='Trix' style={{ width: '60px', height: '60px', margin:'10px' }} />
-    Trix
-  </div>
-</Navbar.Brand>
+          <Navbar.Brand>
+      <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+        <img
+          src={logo}
+          alt='Trix'
+          style={{ width: '60px', height: '60px', margin: '10px' }}
+        />
+        <div style={{ fontSize: '40px', marginLeft: '10px' }}>Trix</div>
+      </div>
+    </Navbar.Brand>
 
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
