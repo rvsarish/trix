@@ -3064,7 +3064,7 @@ textarea.form-control.is-invalid {
 }
 .btn:hover {
   color: var(--bs-btn-hover-color);
-  background-color: white;
+  background-color:;
   border-color: var(--bs-btn-hover-border-color);
 }
 .btn-check + .btn:hover {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Carousel, Image } from 'react-bootstrap';
 import Message from './Message';
 import { useGetTopProductsQuery } from '../slices/productsApiSlice';
+
 const sampleProducts = [
   {
     _id: 1,
@@ -12,7 +13,7 @@ const sampleProducts = [
   {
     _id: 2,
     name: 'vegetables',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiW3HaSM4PAsb-rKDiKBtdKznMUgJH0kQZ3rCa4zViiw&s'
+    image: 'https://watermark.lovepik.com/photo/20211208/large/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg'
   },
   {
     _id: 3,
@@ -25,6 +26,7 @@ const sampleProducts = [
     image: 'https://t4.ftcdn.net/jpg/02/44/16/79/360_F_244167973_E7aRgY9NHX9qW0QWOaZNwmG8NBJaa1rf.jpg'
   }
 ];
+
 const ProductCarousel = () => {
   const { data: products, isLoading, error } = useGetTopProductsQuery();
   const [index, setIndex] = useState(0);
@@ -50,7 +52,7 @@ const ProductCarousel = () => {
       >
         {sampleProducts.map((product) => (
           <Carousel.Item key={product._id}>
-            <Link to={`/product/${product._id}`}>
+            <Link to={`/product/${product._id}`} onClick={(e) => e.preventDefault()}>
               <Image
                 src={product.image}
                 alt={product.name}
