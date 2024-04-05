@@ -89,20 +89,15 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Contact Us */}
           <div className='column'>
             <h3>Contact Us</h3>
             <div className='contact-info'>
-              {/* Phone */}
               <a className='contact-link' href='tel:+91 9876543210'>
                 <AiOutlinePhone className='contact-icon' /> +91 9876543210
               </a>
-              {/* Email */}
               <a className='contact-link' href='mailto:developer@gmail.com'>
                 <AiOutlineMail className='contact-icon' /> developer@gmail.com
               </a>
-              {/* Address */}
               <p>
                 <AiOutlineEnvironment className='contact-icon' /> sjce,chennai{' '}
               </p>
@@ -111,7 +106,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright and Credits */}
       <div className='footer-bottom'>
         <hr />
         <div className='credits'>
@@ -122,7 +116,6 @@ const Footer = () => {
   );
 };
 
-// Footer Links Component
 const Links = ({ title, linksArray }) => (
   <div className='column'>
     <h3>{title}</h3>

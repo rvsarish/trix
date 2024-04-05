@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
 const SearchBox = () => {
   const navigate = useNavigate();
   const { keyword: urlKeyword } = useParams();
-
-  // FIX: uncontrolled input - urlKeyword may be undefined
   const [keyword, setKeyword] = useState(urlKeyword || '');
 
   const submitHandler = (e) => {
@@ -19,7 +16,6 @@ const SearchBox = () => {
       navigate('/');
     }
   };
-
   return (
     <Form onSubmit={submitHandler} className='d-flex'>
       <Form.Control
@@ -36,5 +32,4 @@ const SearchBox = () => {
     </Form>
   );
 };
-
 export default SearchBox;

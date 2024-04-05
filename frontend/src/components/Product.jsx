@@ -9,7 +9,7 @@ const Product = ({ product }) => {
       <Card.Img
           src={product.image}
           variant='top'
-          style={{ maxHeight: '100px', maxWidth: 'auto' }} // Add styling here
+          style={{ maxHeight: '100px', maxWidth: 'auto' }} 
         />      </Link>
 
       <Card.Body>
