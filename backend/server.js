@@ -2,6 +2,7 @@ import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import cors from 'cors'; // Import cors middleware
 dotenv.config();
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
@@ -19,6 +20,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Allow requests from your frontend domain
+app.use(
+  cors({
+    origin: 'https://trix-one.vercel.app',
+    credentials: true,
+  })
+);
 
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
