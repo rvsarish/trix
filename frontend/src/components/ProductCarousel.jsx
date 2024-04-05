@@ -3,7 +3,28 @@ import { Link } from 'react-router-dom';
 import { Carousel, Image } from 'react-bootstrap';
 import Message from './Message';
 import { useGetTopProductsQuery } from '../slices/productsApiSlice';
-
+const sampleProducts = [
+  {
+    _id: 1,
+    name: 'Fruits',
+    image: 'https://img.freepik.com/free-photo/vibrant-collection-healthy-fruit-vegetables-generated-by-ai_24640-80425.jpg'
+  },
+  {
+    _id: 2,
+    name: 'vegetables',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiW3HaSM4PAsb-rKDiKBtdKznMUgJH0kQZ3rCa4zViiw&s'
+  },
+  {
+    _id: 3,
+    name: 'Dairy Products',
+    image: 'https://www.shutterstock.com/image-photo/various-dairy-products-600nw-627224804.jpg'
+  },
+  {
+    _id: 4,
+    name: 'Product 4',
+    image: 'https://t4.ftcdn.net/jpg/02/44/16/79/360_F_244167973_E7aRgY9NHX9qW0QWOaZNwmG8NBJaa1rf.jpg'
+  }
+];
 const ProductCarousel = () => {
   const { data: products, isLoading, error } = useGetTopProductsQuery();
   const [index, setIndex] = useState(0);
@@ -11,11 +32,11 @@ const ProductCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) =>
-        prevIndex === products.length - 1 ? 0 : prevIndex + 1
+        prevIndex === sampleProducts.length - 1 ? 0 : prevIndex + 1
       );
     }, 2000);
     return () => clearInterval(interval);
-  }, [products]);
+  }, []);
 
   return isLoading ? null : error ? (
     <Message variant='danger'>{error?.data?.message || error.error}</Message>
@@ -27,7 +48,7 @@ const ProductCarousel = () => {
         pause={false}
         className='bg-primary mb-4'
       >
-        {products.map((product) => (
+        {sampleProducts.map((product) => (
           <Carousel.Item key={product._id}>
             <Link to={`/product/${product._id}`}>
               <Image
@@ -38,7 +59,7 @@ const ProductCarousel = () => {
               />
               <Carousel.Caption className='carousel-caption'>
                 <h2 className='text-white text-right'>
-                  {product.name} ₹{product.price}
+                  {product.name}
                 </h2>
               </Carousel.Caption>
             </Link>

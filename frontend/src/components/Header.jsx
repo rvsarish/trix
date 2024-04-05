@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <header>
       <Navbar style={{ backgroundColor: '#40916C'}} className='text-white' variant='' expand='lg' collapseOnSelect>
-        <Container className='text-white' >
+        <Container className='text-white' style={{ color: 'white' }} >
           <LinkContainer to='/'>
           <Navbar.Brand>
       <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
@@ -51,10 +51,10 @@ const Header = () => {
             <Nav className='ms-auto'>
               <SearchBox />
               <LinkContainer to='/cart'>
-                <Nav.Link>
+                <Nav.Link >
                   <FaShoppingCart /> Cart
                   {cartItems.length > 0 && (
-                    <Badge pill bg='success' style={{ marginLeft: '5px' }}>
+                    <Badge pill bg='success' style={{ marginLeft: '5px' ,color: 'white'}}>
                       {cartItems.reduce((a, c) => a + c.qty, 0)}
                     </Badge>
                   )}
